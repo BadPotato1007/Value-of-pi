@@ -61,7 +61,7 @@ class PiChudnovsky:
 if __name__ == '__main__':
     try:
         if len(sys.argv) < 2:
-            digits = 200000000
+            digits = 2000000000
         else:
             digits = int(sys.argv[1])
         print("#### PI COMPUTATION ( {} digits )".format(digits))
