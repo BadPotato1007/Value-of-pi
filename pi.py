@@ -4,8 +4,8 @@ import traceback
 from gmpy2 import mpz
 from gmpy2 import isqrt
 from time  import time
- 
- 
+
+
 class PiChudnovsky:
     A = 13591409
     B = 545140134
@@ -15,12 +15,12 @@ class PiChudnovsky:
     C3_24  = C ** 3 // 24
     DIGITS_PER_TERM = math.log(53360 ** 3) / math.log(10)  #=> 14.181647462725476
     FILENAME = "pi.txt"
- 
+
     def __init__(self, digits):
         self.digits = digits
         self.n      = math.floor(self.digits / self.DIGITS_PER_TERM + 1)
         self.prec   = math.floor((self.digits + 1) * math.log2(10))
- 
+
     def compute(self):
         try:
             tm_s = time()
@@ -33,9 +33,9 @@ class PiChudnovsky:
             return time() - tm_s
         except Exception as e:
             raise
- 
+
     def __bsa(self, a, b):
- 
+
         try:
             if a + 1 == b:
                 if a == 0:
@@ -56,8 +56,8 @@ class PiChudnovsky:
             return [p_ab, q_ab, t_ab]
         except Exception as e:
             raise
- 
- 
+
+
 if __name__ == '__main__':
     try:
         if len(sys.argv) < 2:
